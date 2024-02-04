@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="p-5">
+    <div class="card p-5">
+      <form (ngSubmit)="checkUserName()" [formGroup]="registerForm">
+        <div class="mb-3">
+          <input type="text" class="form-control p-3" name="userFirstName" id="userFirstName"
+            placeholder="Enter your First Name" formControlName="userFirstName" />
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control p-3" name="secondName" id="secondName"
+            placeholder="Enter your Second Name" formControlName="userLastName" />
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control p-3" name="userName" id="userName"
+            placeholder="Please select your Username" formControlName="userName" autocomplete="current-username" />
+        </div>
+        <div class="mb-3">
+          <input type="password" class="form-control p-3" name="UserPassword" id="userPassword"
+            placeholder="Enter your Password" formControlName="userPassword" autocomplete="current-password" />
+
+        </div>
+
+        <div class="p-3 row justify-content-center">
+
+          &nbsp;
+          <button class="btn btn-rounded btn-info" type="submit">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>

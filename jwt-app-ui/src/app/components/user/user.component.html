@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="card p-5 text-center">
+    <h1>You are User</h1>
+    <input type="file" (change)="onFileSelected($event)" hidden #fileInput />
+    <button class="btn btn-primary" (click)="fileInput.click()">select an image</button>
+
+    <img *ngIf="imageSrc" [src]="imageSrc" alt="Selected Image" class="img-fluid rounded p-5" style="max-width: 600px;">
+
+    <button (click)="uploadImage()" class="btn btn-success" *ngIf="imageSrc">Upload Image</button>
+    <div class="p-5">
+      <h3>Current image</h3>
+      <img [src]="imageSrc2" alt="Uploaded Image" style="max-width: 500px;">
+    </div>
+  </div>
+</div>

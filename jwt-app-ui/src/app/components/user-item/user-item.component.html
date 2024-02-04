@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="card mt-3"
+  [ngStyle]="isEditing && user === editingUser ? {'background-color':'lightblue'}:{'backgroundcolor':'white'}"
+  >
+    <div class="h3 row pt-3">
+      <p class="col">{{user.userName}}</p>
+      <p class="col">{{user.userFirstName}}</p>
+      <p class="col">{{user.userLastName}}</p>
+      <div class="col">
+        <img [src]="imageSrc" style="max-width: 70px;height: 70px;border-radius: 30px;">
+      </div>
+
+      <div class="col" >
+        <fa-icon [icon]="faEdit" [ngStyle]="{'color':'green'}" (click)="onEditUser(user)" *ngIf="!isEditing">
+        </fa-icon>
+        &nbsp;
+        <fa-icon [icon]="faTimes" [ngStyle]="{'color':'red'}" *ngIf="!isEditing" (click) = "deleteUser()">
+        </fa-icon>
+        <button *ngIf="isEditing" class="btn btn-danger" (click)="close()">close</button>
+      </div>
+    </div>
+  </div>
+  <app-user-edit-form *ngIf="isEditing && user === editingUser" [user]="user" (toggleEdit)="closeEdit($event)"></app-user-edit-form>
+</div>

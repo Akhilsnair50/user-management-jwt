@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="p-5">
+    <div class="card p-5">
+      <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+        <div class="mb-3">
+          <input type="text" class="form-control p-3" ngModel name="userName" id="userName"
+          autocomplete="current-username"
+            placeholder="Enter your Username" />
+        </div>
+        <div class="mb-3">
+          <input type="password" class="form-control p-3" ngModel name="userPassword" id="userPassword"
+          autocomplete="current-password"
+            placeholder="Enter your Password" />
+        </div>
+        <div class="p-3 row justify-content-center">
+          <input type="submit" value="Login" class="btn btn-rounded btn-primary">
+          &nbsp;
+          <button routerLink="/register" class="btn btn-rounded btn-info">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
